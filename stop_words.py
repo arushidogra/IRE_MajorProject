@@ -25,14 +25,14 @@ if __name__ == "__main__":
                     dic_tok[i] += 1
                 except KeyError:
                     dic_tok[i] = 1
-    final_list=[]
+    final_list = []
     for i in dic_tok.items():
         i = list(i)
         i.reverse()
         final_list.append(i)
     final_list.sort()
     final_list.reverse()
-    final_list=final_list[0:50]
+    final_list = final_list[0:50]
     for i in final_list:
         a.write(i[1]+"\n")
 
