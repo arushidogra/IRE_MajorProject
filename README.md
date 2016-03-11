@@ -18,14 +18,14 @@ Tokenization
 Sentence Breaker 
 Identify Variations (Highest Priority, Should not be confused with stemming) 
 POS Tagging(Highest Priority) 
- Tag a continuous text very similar to English POS tagging  
- Concept/Keyword Identification 
- Use POS tagging or some other approaches to identify key concepts  
- Entity Recognition(Highest Priority) 
- Identify people, locations, products, organizations, brands, money, health industry terminology 
+1 Tag a continuous text very similar to English POS tagging  
+2 Concept/Keyword Identification 
+3 Use POS tagging or some other approaches to identify key concepts  
+4 Entity Recognition(Highest Priority) 
+5 Identify people, locations, products, organizations, brands, money, health industry terminology 
 (Zika virus, Pregnancy, Autism) etc.  
- Categorization(Highest Priority) 
- Categorize an article into one of the following categories Politics, Crime, Entertainment, Sports, 
+6 Categorization(Highest Priority) 
+7 Categorize an article into one of the following categories Politics, Crime, Entertainment, Sports, 
 Business, Technology, Science, Health, Foods, Travel, Auto and Fashion. Politics can be treated as 
 default category.  
 Dataset and Evaluation 
