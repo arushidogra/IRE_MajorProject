@@ -1,0 +1,12 @@
+README.rst
+setup.py
+indic_tokenizer.egg-info/PKG-INFO
+indic_tokenizer.egg-info/SOURCES.txt
+indic_tokenizer.egg-info/dependency_links.txt
+indic_tokenizer.egg-info/entry_points.txt
+indic_tokenizer.egg-info/top_level.txt
+irtokz/__init__.py
+irtokz/indic_tokenize.py
+irtokz/roman_tokenize.py
+irtokz/version.py
+irtokz/data/NONBREAKING_PREFIXES
