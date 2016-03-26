@@ -30,12 +30,14 @@ class Tokenizer():
 		self.sentences=text.split(u"।")
 
 	def print_sentences(self,sentences=None):
+                a= []
 		if sentences:
 			for i in sentences:
-				print i.encode('utf-8')
+				a.append(i.encode('utf-8'))
 		else:
 			for i in self.sentences:
-				print i.encode('utf-8')
+				a.append(i.encode('utf-8'))
+                return a
 
 
 	def clean_text(self):
@@ -208,6 +210,6 @@ if __name__=="__main__":
 	f=t.generate_stem_dict()
 	# for i in f.keys():
 	# 	print i.encode('utf-8'),f[i].encode('utf-8')
-	z=t.remove_stop_words()
+	#z=t.remove_stop_words()
 	t.print_tokens(t.final_tokens)
 	print t.sentence_count(),t.tokens_count(),t.len_text()
