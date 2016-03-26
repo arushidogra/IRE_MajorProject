@@ -1,0 +1,45 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+
+# Files Generated on Compilation
+analyser/data/avy.c
+analyser/data/c_data/info.h
+analyser/data/c_data/lext.h
+analyser/data/const.c
+analyser/data/const.h
+analyser/data/dict_final
+analyser/data/feature_value.c
+analyser/data/pdgm_offset_info
+analyser/data/suff
+analyser/data/suff_info.c
+analyser/data/uword.dbm

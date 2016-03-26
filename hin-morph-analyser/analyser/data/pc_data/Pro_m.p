@@ -1,0 +1,14 @@
+Pro_m
+wU
+wuJa
+wUne
+wuJe/wuJako
+wuJase
+wuJameM/wuJame
+wuJapara
+wuma
+wumane 
+wumheM/wumako/wumhe
+wumase
+wumameM/wumame
+wumapara

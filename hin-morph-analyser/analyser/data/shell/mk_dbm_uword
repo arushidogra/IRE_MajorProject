@@ -1,0 +1,2 @@
+./create_dbm_uword.pl GDBM ../uword.dbm < ../dict/uword.dic
+chmod 644 ../uword.dbm

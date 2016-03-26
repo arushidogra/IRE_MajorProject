@@ -1,0 +1,10 @@
+int FINDONCE;
+int FOR_USER;
+int DEFAULT_PARADIGM;
+int ALWAYS_DEFAULT_PARADIGM;
+int SUCCESSFULL;
+int SANDHI;
+int DBM_FLAG;
+int WORD_NUM;
+
+#define wordlen 100

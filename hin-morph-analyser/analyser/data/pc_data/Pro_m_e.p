@@ -1,0 +1,14 @@
+Pro_m_e
+wU
+wuJI
+wuJIne
+wuJIko
+wuJIse
+wuJImeM/wuJIme
+wuJIpara
+wumhIM/wumhI/wumahI
+wumhIMne/wumhIne
+wumhIMko/wumhIko
+wumhIMse/wumhIse
+wumhIMmeM/wumhIme/wumhImeM
+wumhIMpara/wumhIpara

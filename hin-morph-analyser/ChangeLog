@@ -1,0 +1,263 @@
+03-June-2015 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak"<sanketlck@gmail.com>, "Avinash Kumar Singh" <kumaravinashsingh@gmail.com>
+
+	* Version 5.0.4
+
+	- Ana as a verb 6 entries are removed from dictionary.
+	- Current size of dictionary 1,32,976 (dict version-4.9)
+
+	- During installation automatically regression test is checked to test whether installation can be done on specfic OS version of linux or not, if installation is done than one flag 
+	  will automatically be shown "morph hindi version 5.0.4 installed successfully" and if installation cannot be done then "Installation Unsuccessful"
+
+	- This version of morph analyzer is again tested on fc8-32bit, fc-14-32bit & 64bit, fc-16-32bit, fc-21-64bit, ubuntu-12.04-32bit & 64bit, ubuntu-14.04-64bit, Centos-6.6-32bit & 64bit,          Centos-7-64bit
+
+25-Oct-2014 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 5.0.3
+
+	- file data_src/sl/morph/hin/c_data/gen.c is changed to resolve ca path issue.
+
+25-Oct-2014 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 5.0.2
+
+	- This is Language Engineered version by using research version 2.5.2/2.5.4
+	- Changes in suff_tab_.. file to work on UBUNTU(32, 64 bit) and CentOS (32, 64 bit)
+	- Exception words bag updated (size-602).
+	- Changes in print_spell_.. file to work on ekadZa, xarinxe etc.
+	- Changes done in analyser/Makefile file to compile executable.
+	- Updated tests directory
+	- Current size of dictionary 1,32,982 (dict version-4.9)
+
+27-Aug-2014 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 5.0.1
+
+	- Some files updated.
+	- This morph Analyser contains ONLY inflectonal morphology and on the
+	  basic of this analysis derivational analysis will be done.
+
+05-Nov-2013 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 5.0.0
+
+	- Major Change to handling exception words like BolABAlA, BoleBAle, BoleBAloM etc.
+	- File with feature created at data_src/sl/morph/hin/dict/exception_words.txt
+	- Change incorporated in main.c file to handle exception words list
+	- adj-gen-1.0 updated to adj-gen-1.1
+	- some files tests, README, all shell are deleted from src/sl/morph/hin directory to avoid repeatation.
+	- tests directory updated.
+	- Current size of dictionary 1,32,979 (dict version-4.9)
+
+11-July-2013 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 4.0.0
+
+	- Created paradigms for english plural noun like garlsa in Noun_f and drAivarsa in Noun_m.
+	- Added approximately 2000 root words regrading Domain Data(Recipe,gadgat)
+	- Deleted extra constant paradigm from Noun_m.p and Noun_f.p
+	- Deleted Ca paradigm from Adj_case_e
+	- Deleted xAyAz paradigm from Noun_m
+	- Pro_d_m_spl.p deleted.
+	- Pro_self_h.p created.
+	- Pro_spl_a_e.p created.
+	- hE_spl_h.p created.
+	- Pro_self_e.p modified to Pro_self_e_h.p
+	- Did uniformity in Future.p and subj.p files.
+	- Changed paradigm file name to Category Name of the paradigm for unifomity
+	- Pro_self.p and RaRTI_self.p person modified any to 2h.
+	- Change in main.c to print emph and hon together.
+	- Current size of dictionary 1,27,440 (dict version-4.8)
+
+
+29-April-2013 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 3.0.4
+
+	- In pro_d1_e.p file is created to cover emphatic hamIM/hamI plural direct feature.
+	- In pro_a.p file kinhIMne/kinhIne is rectified.
+	- In RaRTI_a_e.p file kisIkI is rectified.
+	- In Adj_case_e.p file xonoM constant paradigm created.
+	- In Adj_case_e.p file Ca paradigm created.
+	- current size of dictionary 1,25,643 (dict version-4.5)
+
+17-April-2013 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 3.0.3
+
+	- genetive pronoun and genetive emphatic pronoun features are fixed as per ilmt guideline
+	- feature of wuma (pl, o) is changed to (sg, o)
+	- to bring out sg ob feature of wuma Pro_d_m_spl created
+	- hyphenated words are deleted
+	- current size of dictionary 1,15,220 (dict version-4.3)
+	- Adjective generator is included in morph
+
+28-Sep-2012 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 3.0.2
+
+	- Removed 2095 noun entry from dictionary which are NOT noun.
+	- In adjective_case.p feature is corrceted of aneka paradigm.
+	- Created new emphatic adjective paradigm within adj_case category.
+	- Genetive pronoun case feature fixed as keyval pair.
+	- created xAyAz paradigm to cover inflected form.
+	- created new paradigm under adjective_case_e like kaI, bIsa and ikkAnave
+	- Token ',' root is &comma in place of ','.
+	- new verb category hE_spl with hE root created to cover hoM/hoz verb.
+	- new variation in future and noun_f category to cover huMgA and qwuyeM
+	- current size of dictionary 100894.
+
+19-July-2012 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 3.0.1
+
+	- Pronoun features problem solved.
+	- Emphatic pronoun added.
+	- Genitive pronoun feaure issue solved.
+	- Emphatic genitive pronoun added.
+	- apanA, sabakA pronoun files created.
+	- Other pronoun spl .p file created.
+	- Feminine adjective generator added.
+	- yA1 issue solved
+	- eM tam label changed into e label.
+	- In Fe file n_s value changed to sg in place of s.
+	- For Verb paradigm corrected/added.
+	- Subjunctive paradigm file corrected.
+	- Adjective dictinary entiries corrected and new entries added.
+	- Adverb dictinary entiries corrected and new entries added.
+	- Overall entries checked and corrected when required except some
+	  issues in NOUN.
+	- Current dictinary size is : 1,01,376
+
+19-July-2012 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 2.7.1, 2.7.2, 2.8.0
+
+	- These version are NOT released.
+
+17-Feb-2011 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 2.7.0
+
+	- current size of dictionary 62876.
+	- alternate variations incorporated in paradigms data_src.
+	  (variation with bindu, chandrabindu and without bindu)
+	- 
+
+17-Feb-2011 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 2.6.5
+
+	- current size of dictionary 53,584
+	- 7668 existing verb edited.
+	- 6504 new causative verbs are added.
+	- se paradigm craeted for verb.
+	- hari paradigm of noun_m activated.
+	- xasavAz paradigm in adj_m creted.
+	- some previous issues are resolved.
+
+27-Jan-2011 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 2.6.4
+
+	- new entries 7,317 are added.
+	- current dict size 47,261
+	- bug fix in c_api_v2/structures.h at line no. 17 if alternatives features 
+	  are more then 8.
+	- In pc_data/noun_m.p two new paradigm jO and pUne are added.
+	- data_src changes roll back to old one(in case of RaRTI_a.p)
+	- tests directory updated as per new update.
+
+08-Dec-10 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 2.6.3
+
+	- new entries 1,833 are added.
+	- pAnI word segmentation fault corrected.
+	- current dict size 39,942
+	- tests directory NOT updated till now (testing)
+
+14-Oct-10 "Rashid Ahmed" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 2.6.2
+
+	- new entry 1,259 added in dict.final
+	- current dictionary size is 38,272
+	- segmentation fault bug is fixed by increasing size of log_messg var
+	  in main.c.
+	- tests directory files extension .rin, .rout is changed to in and out
+	  respectively.
+
+27-Aug-10 "Rashid" <rashid101b@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 2.6.1
+
+	- nukta-adder.py added for resolve the nukta issue in morph.
+
+15-July-2010 "Rashid" <rashid101b@gmail.com>, "Rahul"
+<rahul.agarwal.90@gmail.com>, "Sanket Kumar Pathak" <sanketlck@gmail.com>
+
+	* Version 2.6.0
+
+	- fix no. of cases where morph fails like uxyoga, Sreya, pahacAna, anwima etc.
+	- provide the separate key and value for honorofic cases like KAie, Aie etc.
+	- (earlier in person filed it was like 2h but now 2 is in person field and hon='y' in fs for h)
+	- change for the honorofic is made in main.c file.
+	- remove unused files from src directory (moh.sh, morph2ssf.pl etc.)
+	- small change in Makefile for copying tests directory.
+	- update tests directory with current version of morph.
+
+09-July-2010 "Rashid Ahmad" <rashid101b@gmail.com> 
+
+	* Version 2.5.2
+
+	- data_src directory changed which is given by Rahul 09-july-10.
+	- src directory is same which use in hin2pan system
+	- in this morph log is OFF. tests directory updated as per current
+	  version of morph.
+
+13-07-2009 "Christopher Mala" <efthachris@gmail.com> 
+
+	* Version 2.5.2
+
+	1. Dict size is increased to 38,964.
+	2. add a wrapper to remove SSF tag if present in morph.sh
+	3. it also work on big SSF file having more than 70 words.
+
+	* Version 2.5.1
+
+	1 In morph dictionary nukwa words had been added. 
+	(ex: ladakA <-> ladZakA)
+
+	* Version 2.5
+
+	1. Some verb paradigm are enhanced.
+		like WA,hE,yA1
+	2. Changes has been made according to S/W people Guidlines. (08-04-2009)
+
+	* Version 2.4
+
+	1. Some pronoun case markers are added.
+
+	* Version 2.3
+
+	1. 0 byte file has been removed from the code.
+
+	* Version 2.3
+
+	1. Include person 3 as default for nouns.
+	2. able to handle pronouns and able to produce their suffix. 
+
+	* Version 2.2
+
+	1. Include Makefile for copying and installation.
+	2. improve the directory structure as per ilmt_guideline_0.3 except application logging and code review.
+	3. able to handle pronouns (07-nov-2008)
+	
+	* Version 2.1
+
+	1. Include Makefile for copying and installation.
+	2. improve the directory structure as per ilmt_guideline_0.3 except application logging and code review.
+
+	* Base/Original Version
+
+	1. Developed by Akshar Bharti Group

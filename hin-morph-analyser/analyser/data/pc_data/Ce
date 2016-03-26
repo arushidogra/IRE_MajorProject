@@ -1,0 +1,53 @@
+Noun_m g_m case number
+Noun_f g_f case number
+subj subj_tam ANY_g number2 person1
+Future future_tam gender2 number person1
+yA yA_tam gender number ANY_p
+yA_p_h yA_tam ANY_g ANY_n ANY_p
+hE hE_tam ANY_g number person 
+hE_spl hE_tam ANY_g n_p ANY_p
+hE_spl_h hE_tam ANY_g number2 person_mh 
+WA WA_tam gender number ANY_p
+yA1 yA1_tam gender number ANY_p
+kara kara_tam ANY_g ANY_n ANY_p
+Parsarg
+Advrb
+Post_ptn
+Conjctn
+Intrjctn
+Pro_u person_u number ANY_g case_o case_pron
+Pro_u_e person_u number ANY_g case_o case_pron e_y
+Pro_m person_m number ANY_g case_o case_pron
+Pro_m_e person_m number ANY_g case_o case_pron e_y
+Pro_a person_a number ANY_g case_o case_pron
+Pro_a_e person_a number ANY_g case_o case_pron e_y
+Pro_d_u person_u number ANY_g case_d blank_prsrg
+Pro_d_u_e person_u number ANY_g case_d blank_prsrg e_y
+Pro_d_m person_m number ANY_g case_d blank_prsrg
+Pro_d_m_spl person_m number ANY_g case_o blank_prsrg
+Pro_d_a person_a number ANY_g case_d blank_prsrg
+Pro_o_u person_u number ANY_g case_o blank_prsrg
+Pro_o_a person_a number ANY_g case_o blank_prsrg
+Pro_spl_a person_a n_p ANY_g ANY_c blank_prsrg
+Pro_spl_a_e person_a n_p ANY_g case_d blank_prsrg e_y
+Pro_d_a_e person_a number ANY_g case_d blank_prsrg e_y
+Pro_self person_mh ANY_n ANY_g case_o case_pron
+Pro_self_h person_mh ANY_n ANY_g case_d
+Pro_self_e_h person_mh ANY_n ANY_g case e_y
+RaRTI_a person_a number ANY_g case_o fn_g fn_c fn_n vibhakti
+RaRTI_a_e person_a number ANY_g case_o fn_g fn_c fn_n vibhakti e_y
+RaRTI_m person_m number ANY_g case_o fn_g fn_c fn_n vibhakti
+RaRTI_m_e person_m number ANY_g case_o fn_g fn_c fn_n vibhakti e_y
+RaRTI_u person_u number ANY_g case_o fn_g fn_c fn_n vibhakti
+RaRTI_u_e person_u number ANY_g case_o fn_g fn_c fn_n vibhakti e_y
+RaRTI_self person_mh ANY_n ANY_g case_o fn_g fn_c fn_n vibhakti
+Adj_const ANY_g ANY_n ANY_c
+Adj_m_s g_m n_s ANY_c
+Adj_f_s g_f n_s ANY_c
+Adj_f g_f ANY_n ANY_c
+Adj_m g_m number case
+Adj_case ANY_g n_p case
+Adj_case_e n_p ANY_g case e_y
+wA_nA wA_nA_tam gender number ANY_p
+Root root_tam ANY_g ANY_n ANY_p
+Noun_sh gender1 number1 case vibhakti

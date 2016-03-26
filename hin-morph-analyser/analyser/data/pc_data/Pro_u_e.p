@@ -1,0 +1,14 @@
+Pro_u_e
+mEM
+muJI
+muJIne
+muJIko
+muJIse
+muJImeM/muJIme
+muJIpara
+hamIM/hamI
+hamIMne/hamIne
+hamIMko/hamIko
+hamIMse/hamIse
+hamIMmeM/hamIMme/hamIme
+hamIMpara/hamIpara

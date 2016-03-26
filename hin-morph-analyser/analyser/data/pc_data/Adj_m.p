@@ -1,0 +1,11 @@
+Adj_m
+kAlA
+kAlA
+kAle
+kAle
+kAle
+xasavAz
+xasavAz/xasavAM
+xasaveM/xasavez
+xasaveM/xasavez
+xasaveM/xasavez
