@@ -1,0 +1,20 @@
+how to run :
+
+> For trial run [Runs on 10 lines of original hi.data]: 
+python parser.py sample_hi_10lines.data
+> For complete run [Runs on complete hi.data]:
+python parser.py hi.data
+
+Following files are created :
+categories.data
+category.data
+categoryTopics.data
+keywords.data
+mCategoryTopics.data
+mCategories.data
+lang.data
+mCategory.data
+text.data
+title.data
+url.data
+
