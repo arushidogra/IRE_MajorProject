@@ -1,3 +1,0 @@
-Parsarg
-aba
-aba

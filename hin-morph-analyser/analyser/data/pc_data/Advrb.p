@@ -1,3 +1,0 @@
-Advrb
-aba
-aba
