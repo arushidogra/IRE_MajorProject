@@ -1,0 +1,4 @@
+#include "../c_data/const.h"
+#include "/home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/anusAraka/com/morph/headers/struct.h"
+struct lex_info lex_ar[SIZEOF_LEX] = {
+};

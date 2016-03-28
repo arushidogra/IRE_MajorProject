@@ -1,0 +1,43 @@
+export LC_ALL=POSIX
+ln -s PORT_ANU/sed.pl sed.pl
+find . -exec PORT_ANU/new_sed.sh {} \;
+find . -name jnk -exec rm {} \;
+mkdir anusAraka/tools/mt/bin
+PORT_ANU/compile_hnd 2> ERR_HND
+echo "TESTING..........."
+#testing moh.sh
+anusAraka/hindi/morph/test/moh.sh <anusAraka/hindi/morph/testdata/testinput >anusAraka/hindi/morph/testdata/testoutput
+testres="anusAraka/hindi/morph/testdata/testresult"
+diff anusAraka/hindi/morph/testdata/checkoutput anusAraka/hindi/morph/testdata/testoutput > $testres
+if test -s $testres
+then 
+	echo "********************************************************************"
+	echo "Error in installation."
+	echo "Report Bug to : amba@iiit.net along with the following files:"
+	echo "1. INSTALL_DIR/ERR"
+	echo "2. INSTALL_DIR/ERR_HND"
+	echo "3. INSTALL_DIR/anusAraka/hindi/morph/testdata/testinput"
+	echo "4. INSTALL_DIR/anusAraka/hindi/morph/testdata/testoutput"
+	echo "5. INSTALL_DIR/anusAraka/hindi/morph/testdata/checkoutput"
+	echo "6. INSTALL_DIR/anusAraka/hindi/morph/testdata/testresult"
+	echo "Specify the operating system version also."
+	echo "********************************************************************"
+fi	
+#testing morph_sv.sh
+anusAraka/hindi/morph_SV/morph_sv.sh anusAraka/hindi/morph_SV/testdata/wordinput
+wordres="anusAraka/hindi/morph_SV/testdata/word_testresult"
+diff anusAraka/hindi/morph_SV/testdata/chk_wordoutput anusAraka/hindi/morph_SV/testdata/wordinput.mo > $wordres
+if test -s $wordres
+then 
+	echo "********************************************************************"
+	echo "Error in installation."
+	echo "Report Bug to : amba@iiit.net along with the following files:"
+	echo "1. INSTALL_DIR/ERR"
+	echo "2. INSTALL_DIR/ERR_HND"
+	echo "3. INSTALL_DIR/anusAraka/hindi/morph_SV/testdata/wordinput"
+	echo "4. INSTALL_DIR/anusAraka/hindi/morph_SV/testdata/wordinput.mo"
+	echo "5. INSTALL_DIR/anusAraka/hindi/morph_SV/testdata/chk_wordoutput"
+	echo "6. INSTALL_DIR/anusAraka/hindi/morph_SV/testdata/word_testresult"
+	echo "Specify the operating system version also."
+	echo "********************************************************************"
+fi	

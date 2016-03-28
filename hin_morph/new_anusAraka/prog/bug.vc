@@ -1,0 +1,29 @@
+# Here the answer is selected if it is single one.
+# If it has multiple answers:
+# In case of nouns the one with 0 vibh is selected.
+while($in = <STDIN>)
+{
+chop($in);
+$in =~ s/^NN //;
+$in =~ s/^NV //;
+$in =~ s/^VV //;
+# in case of single ans print it
+if($in !~ /\//) { print $in,"\n"; }
+else # multiple answers
+{
+($rt,$ana) = split(/,/,$in);
+@ans = split(/\//,$ana);
+$k=#$ans;
+#print $k;
+for($i=0;$i<$k;$i++)
+{
+if($ans !~ /\%/) { $non_rare = $i;last;}
+}
+$ans = $rt,",",$ans[$i],"[";
+for($i=0;$i<$k;$i++)
+{
+if($i != $non_rare) {$ans = $ans."/".$ans[$i];}
+}
+$ans =~ s/$/\]/;
+}
+}

@@ -1,0 +1,32 @@
+Noun_m g_m case number
+Noun_f g_f case number
+subj subj_tam ANY_g number person1
+Future future_tam gender number person1
+yA yA_tam gender number ANY_p
+hE hE_tam ANY_g number person 
+WA WA_tam gender number ANY_p
+yA1 yA1_tam gender number ANY_p
+kara kara_tam ANY_g ANY_n ANY_p
+Parsarg
+Advrb
+Post_ptn
+Conjctn
+Intrjctn
+Pro_u person_u number ANY_g case_o case_pron
+Pro_m person_m number ANY_g case_o case_pron
+Pro_a person_a number ANY_g case_o case_pron
+Pro_d_a person_a number ANY_g case_d blank_prsrg
+Pro_self ANY_p ANY_n ANY_g case_o case_pron
+RaRTI_a person_a number gender1 case number1 vibhakti
+RaRTI_m person_m number gender1 case number1 vibhakti
+RaRTI_u person_u number gender1 case number1 vibhakti
+RaRTI_self ANY_p ANY_n gender1 case number1 vibhakti
+Adj_const ANY_g ANY_n ANY_c
+Adj_m_s g_m n_s ANY_c
+Adj_f_s g_f n_s ANY_c
+Adj_f g_f ANY_n ANY_c
+Adj_m g_m number case
+Adj_case ANY_g ANY_n case
+wA_nA wA_nA_tam gender number ANY_p
+Root root_tam ANY_g ANY_n ANY_p
+Noun_sh gender1 number1 case vibhakti

@@ -1,0 +1,80 @@
+Structure of morph output is
+
+# s10 ------------------ sentence delimitor
+input_word --------------- word delimitor
+w11
+cat  --- 6-8 repeated for different analysis of the same word
+root
+features on seperate lines
+ 
+
+Different categories and the corresponding features :
+Category : "v" VERB
+Features:
+"tam",
+"gender",
+"number",
+"person"
+
+Category : "v_a" AUXILIARY VERB 
+Features:
+"tam",
+"gender",
+"number",
+"person"
+
+Category: "vn", VERBAL_NOUN
+Features:
+"gender",
+"number",
+"case",
+"parsarg",
+"tam"
+
+Category: "n" NOUN
+Features:
+"gender",
+"number",
+"case",
+"parsarg",
+
+Category : "p" Post-positions
+
+Category : "adj" Adjectives
+Features:
+"gender",
+"number",
+"case"
+
+Category : "P" Pronoun
+Features:
+"gender",
+"number",
+"case",
+"parsarg",
+
+Category :"Avy" Avyaya
+
+Category :"sh_n" Shashti Noun
+Features:
+"number",
+"gender",
+"number1",
+"case",
+"parsarg",
+
+Category :"D" Adverb
+Features:
+"gender",
+"number",
+"case",
+"parsarg",
+
+Category: "sh_P" Shashti Pronoun (used in Hindi)
+Features:
+"person",
+"number",
+"gender",
+"number1",
+"case",
+"parsarg",

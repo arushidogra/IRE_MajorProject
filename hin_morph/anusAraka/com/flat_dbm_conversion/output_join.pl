@@ -1,0 +1,6 @@
+"Amba","jlj"
+"ooipoipo","jljl#amba#ana"
+"jlj","jgjh"
+"Amba","jlj#jlj#jlj#jlj"
+"jlj","jgjh#jgjh"
+"ooipoipo","ana"

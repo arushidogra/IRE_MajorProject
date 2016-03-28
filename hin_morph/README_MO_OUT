@@ -1,0 +1,225 @@
+	About the morph output:
+	----------------------
+
+	There are two layers of morph: 
+	   CORE morph layer and the Spelling Variation Layer.
+	The output formats for two layers differ slightly.
+
+A) output format of the CORE morph layer:
+   -------------------------------------
+Output consists of following fields seperated by either blank spaces and/or 
+curly brackets viz '{' and '}'.
+
+Field 1: Start marker 
+Field 2: root
+Field 3: paradigm
+Field 4: category
+Field 5: features
+Field 6: end marker
+
+If a word is not analysed, then machine appends <ajFAwa> to the word.
+----------------------------------------------------------------------
+a) Example:
+  Given word: usane
+Morph analysis: MO_¤1_vaha{vaha P any s 1 *ne* }/_MO 
+
+Explanation about Notation:
+--------------------------
+Analysis start marker: MO_¤1_
+Analysis end marker: _MO
+Multiple Analyis Seperator: /
+
+vaha{vaha P any s 1 *ne* } 
+ |    |   
+ |    |   
+root paradigm
+
+vaha{vaha P any s 1 *ne* } 
+          |   
+          |  
+         Category
+vaha{vaha P any s 1 *ne* } 
+             |   
+             |  
+           Gender
+vaha{vaha P any s 1 *ne* } 
+                |   
+                |  
+            Number
+vaha{vaha P any s 1 *ne* } 
+                  |   
+                  |  
+                Case
+vaha{vaha P any s 1 *ne* } 
+                     |   
+                     |  
+                   Parsarg
+
+b) Different categories, corresponding features & their order in the output.
+
+Category: verb
+Symbol used: v
+Features in the order:
+	tam
+	gender
+	number
+	person
+
+Category: noun
+Symbol used: n
+Features in the order:
+	gender
+	number
+	case
+
+Category: Pronoun
+Symbol used: P
+Features in the order:
+	gender
+	number
+	case
+        parsarg
+
+Category: Parsarg
+Symbol used: p
+Features in the order: No features
+
+Category: Adjective
+Symbol used: adj
+Features in the order:
+	gender
+	number
+	case
+
+Category: Indeclinable
+Symbol used: avy
+Features in the order: No features
+
+Category: Adverb
+Symbol used: D
+Features in the order: No features
+
+c) Now coming back to the feature values & what do they stand for.
+For Nouns and adjectives :
+gender : m (male)
+	 f (female)
+number : s (singular)
+         p (plural)
+case   : 0 (direct) (i.e. parsarg does not follow such a word, e.g. ladakA)
+         1 (oblique) (i.e. a parsarg will definitely follow this word 
+                      e.g. ladakoM)
+
+For Verbs:
+tam:	yA/wA/nA/future/subj/kara/0/WA/hE
+	(in case of jA, for jAyA, tam is 'yA' & for gayA 'yA1')
+gender : m (male)
+         f (female)
+number: s (singular)
+        p (plural)
+person: u (uttam :1st person)
+        m (madhyam : 2nd person)
+        m_h (madhyam honorofic : 2nd person)
+        a (anya : 3rd person)
+       
+
+For Pronouns:
+gender : m (male)
+	 f (female)
+number : s (singular)
+         p (plural)
+case   : 0 (direct) (i.e. parsarg does not follow such a word, e.g. ladakA)
+         1 (oblique) (i.e. a parsarg will definitely follow this word 
+                      e.g. ladakoM)
+parsarg : para
+          meM
+          se
+          ko
+          ne
+          0
+d) Paradigm list for different categories:
+
+femimine nouns:
+--------------
+rAwa
+BIda
+ASA
+gudiyA
+IrRyA
+Apawwi
+AjAxi
+SAnwi
+ladakI
+qwu
+vAyu
+bahU
+bAlU
+lO
+sarasoM
+mAz
+
+masculine nouns:
+---------------
+Gara
+Karca
+kroXa
+ladakA
+rAjA
+lohA
+xiXAwA
+kavi
+AxamI
+pAnI
+Sawru
+katu
+AlU
+lahU
+kuAz
+redio
+gehUz
+BARAvix
+
+Adjectives:
+----------
+kAlI
+kAlA
+aneka
+amIra
+bAlikA
+bAlaka
+
+Adverbs:
+-------
+aba
+
+Verbs:
+------
+KA
+kara
+le
+ho
+pI
+CU
+uTa
+so
+hE(defective verb)
+WA(defective verb)
+
+
+B) Output format for the Spelling Variation Layer:
+   ---------------------------------------------
+Spelling variation layer is a layer above the CORE morph to account for the 
+variations in written spellings in Hindi. All the concerned programs are 
+in morph_SV directory.
+The convention used in the output is:
+
+After the start marker, rule number is appended and then follows the spelling
+used for morph analysis followed by the morph analysis of the word with new 
+spelling.
+e.g. in case of 'badZI' spelling is changed internally to 'badI' and then 
+badI is analysed.
+
+final output is:
+MO_¤RL 1: badI:1_badI{kAlI adj f any any }/_MO 
+     |  |  |
+     |  |  |
+    Rule # changed spelling

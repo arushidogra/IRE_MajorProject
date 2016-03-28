@@ -1,0 +1,10 @@
+Noun_sh
+kA
+kA
+ke
+ke
+ke
+kI
+kI
+kI
+kI

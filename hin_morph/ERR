@@ -1,0 +1,4 @@
+mv: 'jnk' and './jnk' are the same file
+PORT_ANU/new_sed.sh: 8: PORT_ANU/new_sed.sh: cannot open ./jnk: No such file
+mv: cannot stat 'jnk': No such file or directory
+chmod: cannot access './jnk': No such file or directory

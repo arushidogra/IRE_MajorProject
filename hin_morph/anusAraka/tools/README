@@ -1,0 +1,29 @@
+
+rex.out:
+usage:  rex.out starting_directory shell_file
+	Shell_file: the one that is to be executed on all the files occuring 
+        under the path specified. (shell file must have execution permission)
+
+example :
+      rex.out ~amba/tools grep.sh
+where grep.sh is 
+ grep recurse $1
+
+my_grep.out:
+usage: my_grep.out word_to_be_searched file_name
+
+read_snt.out:
+usage: read_snt.out <infile >outfile
+This program reads a sentence at a time.
+(sentence is a string of characters terminated by a fullstop.)
+
+read_gen_snt.out:
+usage: read_gen_snt.out <infile >outfile
+This program reads a sentence at a time.
+(sentence is a string of characters terminated by either a '.' or '?' or '!')
+
+read_sentence.out:
+usage: read_sentence.out <infile >outfile
+This program reads a sentence at a time.
+(Sentence here is defined as follows:
+A sentence is defined as ending at a '.' , '!' or '?' followed by either the end of a line , or by two spaces. any number of closing ')' , ']' '"' and '`' characters may appear after the '.' , '!' or '?' before the spaces or end of the line.

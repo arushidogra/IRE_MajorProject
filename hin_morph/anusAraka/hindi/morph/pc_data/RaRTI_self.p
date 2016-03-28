@@ -1,0 +1,10 @@
+RaRTI_self
+Apa
+ApakA
+Apake
+Apake
+Apake
+ApakI
+ApakI
+ApakI
+ApakI

@@ -1,0 +1,10 @@
+wA_nA
+KA
+KAnA
+KAne
+KAnI
+KAnIM
+KAwA
+KAwe
+KAwI
+KAwIM

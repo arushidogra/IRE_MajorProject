@@ -1,0 +1,611 @@
+		   MORPHOLOGY COMPILER/ ANALYSER  VERSION 3.0
+
+
+
+
+
+
+
+
+
+				USER'S MANUAL
+
+				CONTENTS
+
+
+
+
+
+
+
+
+
+
+		CHAPTER  1	INTRODUCTION TO MORPH
+
+		CHAPTER  2	PREPARING DATA FOR MORPH
+
+		CHAPTER  3	USING MORPH
+
+
+
+
+                	CHAPTER 1 : INTRODUCTION TO MORPH
+
+
+
+	MORPHOLOGY COMPILER/ ANALYSER ( hereafter referred to as "morph" ) is a
+
+program which compiles and analyses words belonging to a natural language. It
+
+works in a language independent way, hence it can learn and recognize words from
+
+any language.
+
+	First of all, what is a word ? Morph considers only those strings which
+
+begin with a letter and have zero or more letters or digits or "_" following the
+
+first letter to be words. "Ram" is a word so is "AK47" but "/usr/etc" is not.
+
+All the names of objects  such as files, features, feature-values, etc.,(see 
+
+chapter 2 for more information on objects basic to morph) have to be  words 
+
+in the above described sense. While reading a word all leading non-letters,
+
+are taken as whitespace. So are characters which are not allowed to be a part of
+
+a word. Whitespace is a field separator, hence "/usr/etc" will be read as
+
+two words "usr" and "etc" . Therefore "/" or "," or ";" or " " or "|" or "\"
+
+can all be used to separate words in ones dealings with morph.
+
+	Morph has two modes of operation, viz the COMPILER mode and the ANALY-
+
+SER mode. In the COMPILER mode it reads information about the words of a lang-
+
+uage from paradigm-input files and lexicon-data files and stores the processed
+
+information. This process is referred to as "compilation of data". Once this has
+
+been done Morph can recognize the words which were present in the data. All the
+
+data need not be compiled in one go, fresh data can be fed to morph any time by
+
+running it in compiler mode. To recognize words one has to run morph in its 
+
+second mode of operation, which is the ANALYSER mode. 
+
+	Morph recognizes only those words which it has been "taught". It outputs
+
+all the descriptions of the given word it has read in compiler mode. It produces
+
+a diagnostic "Unknown word <given word>" to say that it does not find the word
+
+in its list.
+
+
+ 	An important point which should be well understood is the difference
+
+between "compilation of data" and compilation of the program "morph". 
+
+Compilation of data is done by running morph in compiler mode. While
+
+"compiling morph" means putting the morph source code through the C-compiler
+
+( because morph is written in C). This may be necessary especially to 
+
+customize morph program to some specific need. Compilation of morph is not
+
+connected with "data compilation" or "compilation of data" in any manner.
+
+At times changes may demand recompilation of full data, while for some changes
+
+only recompilation of morph may suffice, and for some changes both may be 
+
+called for.
+
+  		        CHAPTER 2 : PREPARING DATA FOR MORPH
+
+
+
+	This chapter contains the definitions of terms used in this document
+
+to describe morph usage. Syntax of the files which morph takes from the user
+
+is also explained in this chapter. A proper grasp of these is essential for any
+
+morph user.
+
+
+(1) FEATURE : Any lexical-attribute which characterizes a word, or describes
+
+a word's meaning, is referred to as a "feature", e.g.:
+
+ 	"vibhakti" is a feature which characterizes nouns in Sanskrit.
+
+ 	"number"  is a feature for nouns in English.
+
+	"tense" is a feature related to verbs in English.
+
+
+A word can have more than one feature associated with it, or it may not have any
+
+feature describing it. Different languages have different features associated
+
+with them. In this document both "feature" and "feature-name" have been used to
+
+refer to a feature. Morph's output consists of a listing of features with their
+
+proper values for the given word. There are only two pre-defined features in 
+
+morph which apply to all words. They are "Root-Info" and "Category-Name-Map".
+
+They shall be described in detail later. All other features have to be enumer-
+
+rated explicitly by the user. 
+
+
+
+
+(2) FEATURE VALUE : Meanings, one or more, of a FEATURE, are called feature-
+
+values, e.g. :
+
+ 	Feature "gender" takes three meanings "male", "female" and "neuter".
+
+        Therefore, "neuter" is a feature value of feature "gender" and so 
+
+	are "female"  and "male".
+
+
+
+
+(3) CATEGORY : A group of words described by the same set of features, and 
+
+collectively referred to by the name of their category.
+
+e.g.:
+
+	Words of category "noun" have features "gender", "number" and 
+	
+	"person" in common. Here "noun" is the "category-name" of the
+
+	above mentioned category of words. Similarly verbs have their 
+
+	own category which has the feature "tense" along  with other 
+
+	features associated with it.
+
+A category is characterized only by user-defined features it depends on since 
+
+default features "Root-Information" and "Category-Name-Map" are common to all 
+
+categories.
+
+
+
+
+
+CATEGORY-NAME-MAP : This is a device to allow the user manipulate the category-
+
+name field of the output generated by morph. The value of this feature stays
+
+constant across all the words of a category. It enables different categories to 
+
+have the same label in the category-name field in the output. Such a need arises
+
+when we want all noun-words,which have been entered into more than one category,
+
+to have the same category-name "noun" in the category-name field of the output 
+
+of the morphology analyser. The values of this feature are read from the 
+
+CATEGORY-NAME-MAP-FILE, described in chapter 3.
+
+
+
+
+
+
+(4) FEATURE-ENUMERATOR-FILE : This file is  required in all morph sessions.
+
+It has to be created only once in the very beginning and must stay the same way,
+
+unaltered, in all subsequent sessions of morph. A change in it  may call for a
+
+recompilation of Paradigm-data and Lex-data. It has as many lines as there are 
+
+feature definitions, i.e., each feature definition occupies a line. No feature
+
+definition should extend across more than one line. A feature definition con-
+
+sists of a feature-name followed by a list of the feature-values it takes. The
+
+number of feature-values following a feature-name in the same line is referred 
+
+to as the "length" or "feature-length" of that feature. No two definitions in 
+
+the same file are allowed to have the same feature-name, or in other words, no 
+
+two lines in the file can have the same first entry. In case of multiple 
+
+definitions of a feature-name the outcome is undefined, morph does NOT produce
+
+any messages when it encounters such a situation. The list after the feature-
+
+name  must contain  at least one element, it must not be empty, in other words
+
+features with a feature-length of zero are illegal. For example, a valid feature
+
+definition is:
+
+	number  sing  pl <cr>
+
+The above definition implies that feature "number" takes two values "sing" and 
+
+"pl". Feature-Enumerator-File is nothing but a collection of such definitions.
+
+A Feature-Enumerator could look like :
+
+	TAM  tA yyA nA <cr>
+
+	num  p s   <cr>
+	
+	GENDER male female <cr>
+
+	person u m a <cr>
+
+	g_f  feminine <cr>
+
+		
+If feature definition without any feature-values is encountered morph exits after
+
+indicating an error.
+
+Invalid feature definitions  may look like :
+
+	num <cr>
+
+	p <cr>
+	
+	s <cr>
+
+
+
+
+
+
+CATEGORY-ENUMERATOR-FILE : This file tells morph how your categories depend on 
+
+the features. There are no built in categories in morph. Any category must be 
+
+defined in this file before use. A category definition consists of a category-
+
+name followed by a list of feature-names the category depends on. All the fea-
+
+ture-names must have been defined in the accompanying Feature-Enumerator-File. 
+
+In this case the list of feature-names following a category-name  could be an
+
+empty. For words in such categories the word-root is assumed to be the only
+
+form of the word. A category-enumerator-file based on the sample Feature-
+
+Enumerator-File given above may look like :
+
+
+	noun GENDER num  person <cr>
+
+	noun_f  g_f num person <cr>
+	
+	verb TAM GENDER num person <cr>
+	
+	avyaya <cr>
+
+
+Morph ignores  invalid ( undefined or misspelt ) featurenames and moves on 
+
+after displaying the corresponding warning. Like the feature-enumerator-file,
+
+the category-enumerator-file is referred to in all morph sessions and any
+
+modifications of which often lead to recompilation of all data.
+
+
+
+CATEGORY-NAME-MAP-FILE : This file has two entries in each line. The first
+
+entry is the category-name of a validly declared category in the category-
+
+enumerator-file. The second entry is the string( consisting of "letter" followed
+
+by any number of letter/digit/"_" ) which is to be displayed in the category-
+
+name-map field of the analyser output. Any category not mentioned in this file 
+
+automatically gets a "" assigned to it as a category-name-map. In case the
+
+category-name is itself its own category-name-map then it should be entered
+
+twice on the same line. A sample category-name-map-file based on the examples
+
+given in the previous definitions is given below.
+
+
+	noun    n <cr>
+
+	noun_f  n <cr>
+
+	verb    v <cr>
+
+	avyaya  avy <cr>
+
+The above file, unlike the feature-enumerator-file and the category-enumerator-
+
+file, can be edited at will and does not call for any recompilation of either
+
+the data or the program.
+
+
+
+
+
+PARADIGM-INPUT-FILE : This file is read by morph in compiler mode during
+
+paradigm-data input.  The information collected from this file is stored in
+
+three files called Trie, Info and Rlex in a coded form. The syntax of this file
+
+is explained below. "m" is the number of word-forms prescribed for the category
+
+whose name appears in the first line of the file, and is the product of the 
+
+feature-lengths of all the features associated with the category . The line-
+
+numbers given in the beginning of each line are only for reference and must not 
+
+be keyed in.
+
+
+Line No.   Line contents.
+
+1 	   category-name <cr>
+
+2	   word-root <cr>
+
+3	   word-form-1 , alternate-word-forms, ...
+
+4          word-form-2 , alternate-word-forms, ...
+
+.	   .
+.	   .
+.	   .
+
+m+3        word-form-m , alternate-word-forms, ...
+
+
+Line 1 has only the category-name on it. Line 2 has the root on it. Note that
+
+multiple entries in either line 1 or line 2 would render the paradigm-input-file
+
+invalid. Only the root mentioned in line 2 of a paradigm-input-file can be given
+
+as a "model-root" in LEX-DATA-FILE (also see the section under LEX-DATA-FILE in
+
+this chapter). The word-forms are to be listed in "last varies fastest" order. 
+
+All "synonyms" should be entered in the same line separated by white-space or 
+
+"," .  Line no 3 should be left blank always in all such files. Line 3 is 
+
+followed by m lines of word-forms and their synonyms. An empty line in any of 
+
+m lines of the file after line 3 indicates the lack of a wordform for the set
+
+of feature-values corresponding to the empty line .The number of paradigms per 
+
+PARADIGM-INPUT-FILE is limited to one( see utility "load" in the chapter on
+
+utilities). More than one paradigm definitions in the same file will lead to the
+
+particular file being rejected by morph for having improper no of wordforms
+
+( since morph always expects only one paradigm per PARADIGM-INPUT file). 
+
+
+
+
+LEX-DATA-FILE : This file is to provide "lex-input" to morph. The syntax of the
+
+file is explained below. As before the line numbers are for reference only.
+
+
+Line no	  Line contents
+
+1	  n   category-1  category-2 category-3  ... category-n <cr>
+
+2	  new-root-1 <cr>
+
+3         root-info 1 <cr>
+
+4 	  root-info 2 <cr>
+
+.	  .
+.	  .
+.	  .
+
+n+2	  root-info n <cr>
+
+n+3       model-root-1 , model-root-2 ,  ..., model-root-n <cr>
+
+n+4       <cr>
+
+n+5       new-root-2 <cr>
+
+
+"n" is an integer giving the number of categories in the cat-group. It must
+
+always be followed by "n" category-names in the same line, i.e., the first line.
+
+Leave the first line of the LEX-DATA-FILE blank to indicate an empty category-
+
+group ( i.e. n = 0).  The number of root-info-lines should be equal to the 
+
+number of categories in the category-group. The number of model-roots should 
+
+also equal the number of categories present in the category-group. To indicate
+
+a "null" model-root use the NULLWORD as defined in "../nmv2/morph.h" as place
+
+marker. The place marker has to be stated explicitly wherever needed. In case no
+
+category-group is specified there should be only one root-info line. But there
+
+is now no restriction on the number of model-roots which can be listed in the 
+
+n+3 th line of the lex-data for the given new-root. More than one new-root can 
+
+be listed under the given category-group definition in the same file( line no 
+
+n+5 and onwards). During compilation of Lex-data if more than one paradigm 
+
+corresponds to the given model-root and category combination, or to the model-
+
+root alone ( in case of empty category-group ) a warning is issued. The given 
+
+Lex-data is compiled only after the user explicitly directs the program to 
+
+ignore the warning(s) and carry on. A model-root is any word root which has been
+
+entered as the root of at least one paradigm-word and therefore figures on line 
+
+no 2 of at least one PARADIGM-INPUT-FILE .
+
+
+	The files described in the remaining portion of this chapter do not
+
+belong to this chapter if one goes srictly by the title of the chapter.
+
+The user does not have to "prepare" them in any way, or have any familiarity 
+
+with their internal structure. Thes files are created and maintained by morph
+
+program by itself.  The have been mentioned briefly only because they are an
+
+integral part of morph and must always be present in the user's working 
+
+directory.
+
+
+
+
+		Chapter 3	Using MORPH
+	
+	Sample outputs of both types, verbose and terse, for Hindi words
+
+"pioge" and "bAlaka" are given below for comparison. They are followed by
+
+relevant excerpts from the corresponding "Fe", "Ce" and "Ca" files. The
+
+definitions contained in these files apply to both "bAlakA" and "pioge".
+
+
+
+
+    VERBOSE OUTPUT FOR "bAlaka"		TERSE OUTPUT FOR "bAlaka"
+
+					
+	bAlaka					#
+	CATEGORY : Adj_m_s			input_word
+	CNAMEMAP : adj				adj
+	ROOT     : bAlaka			bAlaka
+	RINFO    : 				m
+	g_m      : m				s
+	n_s      : s				any
+	ANY      : any				#
+	SUFFIX   : 
+
+
+
+    VERBOSE OUTPUT FOR "pioge"		TERSE OUTPUT FOR "pioge"
+
+	pioge					#
+        CATEGORY : Future			input_word
+	CNAMEMAP : v				v
+	ROOT     : pI				pI
+	RINFO    : 				future
+	future_tam : future			m
+	gender   : m				p
+	number   : p				m
+	person   : m				#
+	SUFFIX   : ioge
+
+
+
+"Fe" LISTING (common to both "bAlaka" and "pioge"):
+
+number ,	p,s
+gender ,	f,m
+person , 	a,m,u
+g_m ,    	m
+ANY ,    	any
+n_s ,   	s
+future_tam ,    future
+
+
+
+"Ce" LISTING (common to both "bAlaka" and "pioge"):
+
+Future ,        future_tam,  gender,  number,  person
+Adj_m_s ,	g_m,  n_s,  ANY
+
+
+
+"Ca" LISTING (common to both "bAlaka" and "pioge"):
+
+Future 		v
+Adj_m_s 	adj
+
+
+
+	By manipulating the category-definition one can always control the 
+
+order in which the feature-values( defined in the feature-enumerator ) are 
+
+listed in the output. Any information common to all words in a category can 
+
+be had in the output by declaring single valued features ( e. g. g_m, ANY, n_s,
+
+and future_tam ) in the feature-enumerator-file and including them in the 
+
+definition of the corresponding category in the category-enumerator-file.
+
+
+CAUTION : Any changes in the category-enumerator-file or the feature-enumerator-
+
+file renders all previously compiled-data useless. A recompilation of the 
+
+complete-data ( paradigm and lex ) becomes a must(see CHAPTER 1). Even paradigm-
+
+input-files may have to be modified because their structure is also connected to
+
+category-definition. 
+
+		COMPILATION:
+
+When a new .p file is added, or in an existing .p file # of lines is changed:
+Do the following things.
+a) .p file should be placed in pc_data sub dir.
+b) Relevant info regarding the category, features & its values should
+be entered in Ca, Ce & Fe files in test area.
+ 
+For compilation: run
+data_compile.sh
+
+
+
+prog areas:
+/usr3/amba/anusAraka/com/morph/

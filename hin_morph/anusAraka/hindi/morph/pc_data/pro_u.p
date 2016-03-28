@@ -1,0 +1,14 @@
+Pro_u
+mEM
+mEM
+mEMne
+muJe/muJako
+muJase
+muJameM
+muJapara
+hama
+hamane
+hameM/hamako
+hamase
+hamameM
+hamapara

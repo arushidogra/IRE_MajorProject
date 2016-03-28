@@ -1,0 +1,91 @@
+#!/usr/bin/perl
+
+#We propose to store the basic information in a processed form for two line
+#display in the following three arrays.
+
+#@preceding_white_space
+#@telugu_wrd_lst
+#@hindi_wrd_lst
+
+#--------------------------------
+#First we fill up first two arrays using the telugu file.
+open(INFILE,"<$ARGV[0]");
+$count = -1;
+$line_count = 0;
+while($inputline = <INFILE>){
+chop $inputline;
+	while($inputline =~ m/([ 	]*)([^ 	]*)/g) {
+		$count++;
+		$preceding_white_space[$count] = $1;	
+		$telugu_wrd_lst[$count] = $2;	
+#		print pos $inputline,"\n";
+		$count_to_line_number[$count] = $line_count;
+		}
+	$count++;
+		$preceding_white_space[$count] = "\n";	
+		$telugu_wrd_lst[$count] = "__NEW-LINE__";	
+		$line_number_info[$line_count] = $count;
+		$count_to_line_number[$count] = $line_count;
+		$line_count++;
+	
+	}
+#-------------------------------------
+#Now we fill up hindi_wrd_lst and prcdg_white_spc using the hindi file.
+open(OUTFILE,"<$ARGV[1]");
+$cnt = -1;
+$line_cnt = 0;
+while($outputline = <OUTFILE>){
+chop $outputline;
+	while($outputline =~ m/([ 	]*)([^ 	]*)/g) {
+		$cnt++;
+		$prcdng_white_spc[$cnt] = $1;	
+		$hindi_wrd_lst[$cnt] = $2;	
+#		print pos $outputline,"\n";
+		$cnt_to_line_nmbr[$cnt] = $line_cnt;
+		}
+	$cnt++;
+		$prcdng_white_spc[$cnt] = "\n";	
+		$hindi_wrd_lst[$cnt] = "__NEW-LINE__";	
+		$line_nmbr_info[$line_cnt] = $cnt;
+		$cnt_to_line_nmbr[$cnt] = $line_cnt;
+		$line_cnt++;
+	
+	}
+print $cnt,"rAma rAma\n";
+#-------------------------------------
+#Testing equality of the white space files.
+if($cnt == $count) { print "COUNTS MATCH\n"; }
+else {print "COUNTS DO NOT MATCH\n","count=",$count," ","cnt=",$cnt,"\n"}
+
+$count_i = 0;
+while($count>$count_i) {
+	if($prcdng_white_spc[$count_i] ne $preceding_white_space[$count_i]) {
+	print $count_i," t ",1+$count_to_line_number[$count_i]," h ",1+$cnt_to_line_nmbr[$count_i],"\n";
+	print $telugu_wrd_lst[$count_i],"  ",$hindi_wrd_lst[$count_i],"\n";
+	}
+	$count_i++;
+	}
+$count_j = 0;
+while($line_count>$count_j) {
+	print $count_j+1," : ",$line_number_info[$count_j],",",$line_nmbr_info[$count_j],"\n";
+	$count_j++;
+	}
+#-----------------------------------------
+#Replacing non-mandatory "\n" by "\r"
+#SPECIFICATIONS:
+# Wherever possible make sure that line length does not exceed 80 chars.
+# Preserve "\n	" (i.e. new-line followed by TAB)
+# Preserve "\n[ ]{m,.}" (i.e. new-line followed by m or more spaces.(default m[=3]))
+# Preserve "\n[\n]+" (i.e. 2 or more new-lines)
+
+# Preserve "\n" if it has less than N[=55] characters precediting it.
+
+#ALGORITHM:
+# 1. Replace all "\n" cases which do not come under preserve category by "\r".
+
+# 2. If 80th character happens to be white-space add "\n" after it; 
+#    else add "\n" before the word which has 80th character.
+#    (Count is reset after each "\n")
+
+#split /[ ]+|[,?]/, "hari                 rAma,mohana?SyAma";
+#print $_[0],"|",$_[1],"|",$_[2],"|",$_[3],"\n";

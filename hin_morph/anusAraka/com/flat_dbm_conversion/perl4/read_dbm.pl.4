@@ -1,0 +1,7 @@
+
+dbmopen(LEX,'/1d1/amba/anusAraka/com/dbm_morph/j',0666);
+while (($key,$val) = each %LEX) {
+                       print $key, ' = ', $val, "\n";
+                  }
+
+dbmclose(LEX);

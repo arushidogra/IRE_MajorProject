@@ -1,0 +1,30 @@
+cd /home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/anusAraka/tools/mt/bin
+cc -g -c ../source_code/*.c
+
+cd /home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/anusAraka/tools/layout
+/home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/tools/my_bin/comp_lex.sh sep_punct
+
+cd /home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/new_anusAraka/prog
+/home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/tools/my_bin/comp_lex_gnu.sh sbst
+/home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/tools/my_bin/comp_lex_dbm.sh heuristics
+/home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/tools/my_bin/comp_lex.sh mark_hash
+/home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/tools/my_bin/comp_lex.sh filter_LWG
+/home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/tools/my_bin/comp_lex_gnu.sh sbst_mo
+/home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/tools/my_bin/comp_lex_gnu.sh sbst_map
+/home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/tools/my_bin/comp_lex_gnu.sh sbst_suf
+/home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/tools/my_bin/comp_lex_gnu.sh sbst_frz
+/home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/tools/my_bin/comp_lex_gnu.sh sbst_frz_mo
+cc -g -DGNU -o create_dbm.out create_dbm.c -lgdbm
+./prp_noun_rt.sh
+
+echo compiling dict
+#####################
+cd /home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/anusAraka/hindi/dict
+./mk_dbm_dict_gnu.sh
+
+echo compiling morph
+####################
+cd /home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/anusAraka/hindi/morph/test
+./data_compile.sh
+cd /home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph
+

@@ -1,0 +1,5 @@
+This directory contains programs to account for the spelling variations in Hindi.
+This can be treated as an amendment to the original morph.
+Words that are not recognised by the original morph are checked here
+for possible spelling variations.
+

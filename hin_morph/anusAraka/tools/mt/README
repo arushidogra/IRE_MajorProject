@@ -1,0 +1,9 @@
+rex : 
+	Arg 1 : Starting directory.
+	Arg 2 : Shell file that is to be executed on all the files occuring 
+		under the path specified. (shell file must have execution 
+						permission)
+example :
+      rex ~amba/tools grep.sh
+where grep.sh is 
+ grep recurse $1

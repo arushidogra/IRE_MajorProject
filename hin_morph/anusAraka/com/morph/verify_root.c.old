@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <strings.h>
+#ifdef GNU
+#include <gdbm.h>
+#else
+#include <ndbm.h>
+#endif
+
+
+
+#include "/usr3/amba/anusAraka/com/morph/headers/defn.h"
+#include "/usr3/amba/anusAraka/com/morph/headers/struct.h"
+#include "/usr3/amba/anusAraka/com/morph/headers/struct1.h"
+
+verify_root(guessed_root,pdgm,cat,offset,ans_table,ans_ar,j,swit1,fpt,fp_pdgm,DBM_FLAG,db)
+char guessed_root[SUFFWORDSIZE],pdgm[WORD_SIZE],cat[CATEGORYWORDSIZE];
+int offset,*j;
+struct lex_info ans_table[100];
+struct ans_struct ans_ar[100];
+int swit1,DBM_FLAG; 
+FILE *fpt,*fp_pdgm; 
+#ifdef GNU
+GDBM_FILE db;
+#else
+DBM *db;
+#endif
+
+{
+match_in_dict(guessed_root,pdgm,cat,offset,ans_table,ans_ar,j);
+test_hypothetical_dict(guessed_root,pdgm,cat,offset,ans_ar,j,swit1,fpt,fp_pdgm,DBM_FLAG,db);
+}
+match_in_dict(guessed_root,pdgm,cat,offset,ans_table,ans_ar,k)
+char guessed_root[SUFFWORDSIZE],pdgm[WORD_SIZE],cat[CATEGORYWORDSIZE];
+int offset,*k;
+struct lex_info ans_table[100];
+struct ans_struct ans_ar[100];
+{
+int j;
+j=0;
+while(ans_table[j].word[0] !='\0')
+ {
+if(!strcmp(ans_table[j].word,guessed_root) && !strcmp(ans_table[j].pdgm,pdgm) && !strcmp(ans_table[j].cat,cat))
+ {
+  strcpy(ans_ar[*k].root,ans_table[j].word);
+  ans_ar[*k].offset = offset;
+  strcpy(ans_ar[*k].adjl,"");
+  (*k)++;
+ }
+ j++;
+ }  
+}  
+test_hypothetical_dict(root,pdgm,cat,suff_offset,ans_ar,j,swit1,fpt,fp_pdgm,DBM_FLAG,db)
+char root[SUFFWORDSIZE],pdgm[WORD_SIZE],cat[CATEGORYWORDSIZE];
+int suff_offset,*j;
+struct ans_struct ans_ar[100];
+int swit1,DBM_FLAG;
+FILE *fpt,*fp_pdgm;
+#ifdef GNU
+GDBM_FILE db;
+#else
+DBM *db;
+#endif
+
+{
+}

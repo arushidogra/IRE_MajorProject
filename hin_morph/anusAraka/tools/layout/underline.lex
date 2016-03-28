@@ -1,0 +1,2 @@
+%%
+. {printf("_%s",yytext);}

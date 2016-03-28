@@ -1,0 +1,9 @@
+dbmopen(DB_STORY,$ARGV[0],0666);
+while($in = <STDIN>)
+{
+chop($in);
+($wrd1,$wrd2) = split(/,/,$in);
+if($wrd2 eq "") { $wrd2 = $wrd1;}
+$DB_STORY{$wrd1} = $wrd2;
+}
+dbmclose(DB_STORY);
