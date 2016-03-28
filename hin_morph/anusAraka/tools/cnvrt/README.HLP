@@ -1,7 +1,0 @@
-cnvert.out is the program to convert a file in devanagari script to Roman script & vice versa.
-USAGE:   
-         cnvrt.out [rN] < input_file_name >output_file_name
-         r:To convert from Devanagari to Roman 
-         default: converts from Roman to Devanagari
-	 N:new mapping
-In old mapping the rhasva as well as XIrGa mAwrAs (in south Indian

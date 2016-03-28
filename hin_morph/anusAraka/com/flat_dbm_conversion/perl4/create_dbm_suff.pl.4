@@ -1,7 +1,0 @@
-dbmopen(SUFF,$ARGV[0],0666);
-while(<STDIN>)
-{
-$_ =~ /"([^"]+)","([^"]+)",$/;
-$SUFF{$1} = $2;
-}
-dbmclose(SUFF);

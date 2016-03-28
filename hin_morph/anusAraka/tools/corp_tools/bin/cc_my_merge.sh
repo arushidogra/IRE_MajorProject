@@ -1,1 +1,0 @@
-cc -g -o my_merge.out ../src/my_merge.c /home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/anusAraka/tools/mt/bin/fgetword.o /home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/anusAraka/tools/corp_tools/src/fgetnumber.c

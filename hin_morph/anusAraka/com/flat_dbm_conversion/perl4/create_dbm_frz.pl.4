@@ -1,7 +1,0 @@
-dbmopen(LEX,$ARGV[0],0666);
-while(<STDIN>)
-{
-$_ =~ /^([a-zA-Z_]+)	(.+)$/;
-$LEX{$1}=$2;
-}
-dbmclose(LEX);

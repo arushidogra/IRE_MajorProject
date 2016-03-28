@@ -1,9 +1,0 @@
-sed '4,$w jnk' < ../c_data/suff_info.c > jnk1
-perl /home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/anusAraka/com/flat_dbm_conversion/rpl_blank_0.pl < jnk > jnk1
-rm jnk
-mv jnk1 suff_info.c
-sed '$d' suff_info.c > jnk
-mv jnk suff_info.c
-perl /home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/anusAraka/com/flat_dbm_conversion/join_suff.pl < suff_info.c > suff_info.dbm.c
-perl /home/arushi/Desktop/MajorProject/temp_pr/IRE_MajorProject/hin_morph/anusAraka/com/flat_dbm_conversion/create_dbm_suff.pl GDBM suff < suff_info.dbm.c
-#rm suff_info.c

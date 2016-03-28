@@ -1,7 +1,0 @@
-dbmopen(UWORD,$ARGV[0],0666);
-while(<STDIN>)
-{
-$_ =~ /([^ ]+) (@.+)$/;
-$UWORD{$1} = $2;
-}
-dbmclose(UWORD);

@@ -1,7 +1,0 @@
-dbmopen(DB_STORY,"story_wrds",0666);
-while($in = <STDIN>)
-{
-chop($in);
-print $DB_STORY{$in};
-}
-dbmclose(DB_STORY);
