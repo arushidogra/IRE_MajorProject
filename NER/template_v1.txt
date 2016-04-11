@@ -1,0 +1,14 @@
+#Unigram
+#previous word
+U00:%x[-1,0]
+#current word
+U01:%x[0,0]
+#next word
+U02:%x[1,0]
+#POS
+U03:%x[0,1]
+#Sub-POS
+U04:%x[0,2]
+
+#Bigram
+B
