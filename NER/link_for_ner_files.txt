@@ -1,0 +1,20 @@
+Model files, test files, train files, templates can be downloaded from following link :
+https://drive.google.com/open?id=0B9R689l64JuoTTd5dnpUc0c5YWM
+
+Preparing model file by yourself :
+crf_learn template_file train_file model_file
+
+Install CRF++ : 
+
+Download CRF++.(https://taku910.github.io/crfpp/#download)
+Extract the CRF++-0.xx.tar.gz file
+Navigate till the extracted folder and run the following commands-
+$./configure
+$make
+$su
+#make install
+
+[For running the su command if you get the authentication error
+then
+$ sudo passwd root
+And then continue with the installation ]
