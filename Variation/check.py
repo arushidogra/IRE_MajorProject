@@ -4,6 +4,15 @@ import translit
 import soundex
 import io
 
+from nltk.corpus import wordnet as wn
+def lemmalist(str):
+    syn_set = []
+    for synset in wn.synsets(str):
+        for item in synset.lemma_names:
+            syn_set.append(item)
+    return syn_set
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 3:
         sys.stderr.write("Usage: " + sys.argv[0] + " word1 word2\n " )
@@ -23,20 +32,24 @@ if __name__ == "__main__":
     a = soundex.Soundex()
     
     a = a.compare(word1,word2)
-    
+    flag=0
     print a
     if a==1:
         print "phonetically same"
     else :
         print "no"
-    '''
-    if a==b:
-        print "same"
-    else:
-        print "not same"
-    '''
-        #TODO 
-        #Check wikinet and edit distance with rules
-    #b = Transliterator().transliterate(word2,"en_US")
-    #print a,b
+        flag=1
+    if flag==0:
+       a = lemmalist(word1)
+       b = lemmalist(word2)
+       for i in a:
+           for j in b:
+               if i==j:
+                   print "Yes"
+                   flag=1
+
+    if flag==0:
+        print "No"
+    
+
         
